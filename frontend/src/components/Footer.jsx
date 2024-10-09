@@ -63,12 +63,12 @@ const Footer = () => {
 
             <hr className='bg-zinc-600 h-[1px] border-none' />
 
-            <div className='flex gap-3 justify-center'>
+            <div className='md:flex md:gap-3 md:justify-center'>
                 <div>
                 <p className='py-5 text-sm text-center text-gray-500'>Copyright 2024@ MAX Multispeciality Hospital - <span className='text-primary'>All Right Reserved.</span></p>
                 </div>
 
-                <button><a className='border border-primary rounded-full py-1 px-3 text-primary hover:text-gray-200 hover:bg-primary transition-all duration-300' href="https://www.max-hospital-admin.shivamchikara.xyz/" target="_blank" rel="noopener noreferrer">Switch to Admin</a></button>
+                <button className='flex flex-col items-center justify-center w-full md:w-fit mb-3 md:mb-0'><a className='border border-primary rounded-full py-1 px-3 text-primary hover:text-gray-200 hover:bg-primary transition-all duration-300' href="https://www.max-hospital-admin.shivamchikara.xyz/" target="_blank" rel="noopener noreferrer">Switch to Admin</a></button>
             </div>
         </div>
     )
