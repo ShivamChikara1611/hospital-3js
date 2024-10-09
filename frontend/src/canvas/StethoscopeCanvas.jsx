@@ -17,7 +17,7 @@ const StethoscopeCanvas = (props) => {
 
     return (
         <group ref={groupRef} {...props} dispose={null}>
-            <group position={[-0.879, -0.627, 0]} scale={0.15}>
+            <group position={[-0.879, -0.627, 0]} scale={0.1}>
                 <mesh
                     castShadow
                     receiveShadow
