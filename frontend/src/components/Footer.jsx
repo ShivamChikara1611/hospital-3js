@@ -68,7 +68,7 @@ const Footer = () => {
                 <p className='py-5 text-sm text-center text-gray-500'>Copyright 2024@ MAX Multispeciality Hospital - <span className='text-primary'>All Right Reserved.</span></p>
                 </div>
 
-                <button><a className='border border-primary rounded-full py-1 px-3 text-primary hover:text-gray-200 hover:bg-primary transition-all duration-300' href="http://localhost:5179/" target="_blank" rel="noopener noreferrer">Switch to Admin</a></button>
+                <button><a className='border border-primary rounded-full py-1 px-3 text-primary hover:text-gray-200 hover:bg-primary transition-all duration-300' href="https://www.max-hospital-admin.shivamchikara.xyz/" target="_blank" rel="noopener noreferrer">Switch to Admin</a></button>
             </div>
         </div>
     )
