@@ -74,6 +74,7 @@ const Contact = () => {
                     <span className='text-white font-medium mb-4'>Your Name</span>
                     <input
                         type='text'
+                        required
                         name='name'
                         value={form.name}
                         onChange={handleChange}
@@ -85,6 +86,7 @@ const Contact = () => {
                     <span className='text-white font-medium mb-4'>Your email</span>
                     <input
                         type='email'
+                        required
                         name='email'
                         value={form.email}
                         onChange={handleChange}
@@ -97,6 +99,7 @@ const Contact = () => {
                     <textarea
                         rows={7}
                         name='message'
+                        required
                         value={form.message}
                         onChange={handleChange}
                         placeholder='What you want to say?'
