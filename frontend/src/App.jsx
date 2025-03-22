@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Doctors from './pages/Doctors'
 import Login from './pages/Login'
 import About from './pages/About'
+import SkinCancerDetection from './pages/SkinCancerDetection'
 import Contact from './pages/Contact'
 import MyProfile from './pages/MyProfile'
 import MyAppointments from './pages/MyAppointments'
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/doctors/:speciality' element={<Doctors />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/about' element={<About />}/>
+        <Route path='/skin-cancer' element={<SkinCancerDetection />}/>
         <Route path='/contact' element={<Contact />}/>
         <Route path='/my-profile' element={<MyProfile />}/>
         <Route path='/my-appointments' element={<MyAppointments />}/>

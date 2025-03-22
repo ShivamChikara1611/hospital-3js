@@ -48,6 +48,9 @@ import patient3 from './patient3.png'
 import patient4 from './patient4.png'
 import patient5 from './patient5.png'
 import user1 from './user1.jpg'
+import skincancer1 from './skincancer1.png'
+import skincancer2 from './skincancer2.png'
+import skincancer3 from './skincancer3.png'
 
 
 
@@ -85,7 +88,10 @@ export const assets = {
     patient3,
     patient4,
     patient5,
-    user1
+    user1,
+    skincancer1,
+    skincancer2,
+    skincancer3
 }
 
 export const specialityData = [
