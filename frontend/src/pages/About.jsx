@@ -53,14 +53,14 @@ const About = () => {
 
 
     return (
-        <div className='mt-10 text-white flex flex-col items-center'>
-            <h1 className='text-4xl font-bold text-center text-gray-300'>About <span className='text-primary'>Us</span></h1>
+        <div className='mt-10 flex flex-col items-center mb-[150px]'>
+            <h1 className='text-4xl font-bold text-center text-gray-800'>About <span className='text-primary'>Us</span></h1>
 
             {/* About Banner */}
-            <div className='bg-primary bg-opacity-20 rounded-xl sm:flex items-center overflow-hidden justify-evenly mt-10 p-8 gap-8 xl:gap-10 xl:px-[100px] max-w-[1300px]'>
+            <div className='bg-third/50 rounded-xl sm:flex items-center overflow-hidden justify-evenly mt-10 p-8 gap-8 xl:gap-10 xl:px-[100px] max-w-[1300px]'>
                 <img className='w-[50%] sm:w-[35%] md:max-w-[28%] lg:max-w-[22%] xl:max-w-[20%] mb-8 sm:mb-0 m-auto' src={assets.about_banner} alt="" />
                 <div className='text-center sm:text-left'>
-                    <h1 className='text-2xl md:text-3xl md:mb-4 lg:text-4xl font-semibold'>Redefining Healthcare with Compassion, Innovation, and Care</h1>
+                    <h1 className='text-2xl md:text-3xl md:mb-4 lg:text-4xl font-semibold text-primary'>Redefining Healthcare with Compassion, Innovation, and Care</h1>
                     <button onClick={() => navigate('/doctors')} className='bg-transparent sm:text-lg px-6 py-2 border text-primary border-primary rounded-full mt-4 hover:bg-primary hover:text-white transition-all hover:scale-105 duration-300'>Book your Appointment</button>
                 </div>
             </div>
@@ -72,38 +72,38 @@ const About = () => {
                 </div>
                 <div className='md:w-1/2 mt-8 md:mt-0'>
                     <h2 className='text-3xl font-semibold mb-4'><span className='text-primary'>Intro.</span></h2>
-                    <p className='text-lg text-gray-400'>Welcome to MAX Multispeciality Hospital, where compassionate care meets cutting-edge technology...</p>
+                    <p className='text-lg text-gray-800'>Welcome to MAX Multispeciality Hospital, where compassionate care meets cutting-edge technology...</p>
                 </div>
             </div>
 
             {/* Mission, Vision, and Values */}
             <div className='flex flex-wrap justify-center gap-10 mt-[150px]'>
                 {/* Mission */}
-                <div className='flex flex-col items-center justify-center p-5 max-w-[400px] border border-4 border-primary'>
+                <div className='flex flex-col items-center justify-center p-5 max-w-[400px] border border-4 border-secondary'>
                     <img src={assets.mission} alt="Mission Icon" className='mb-4' />
                     <h3 className='text-2xl font-semibold mb-2'>Mission</h3>
-                    <p className='text-gray-400'>Our mission is to provide exceptional healthcare services by combining advanced medical treatments with personalized patient care...</p>
+                    <p className='text-gray-500'>Our mission is to provide exceptional healthcare services by combining advanced medical treatments with personalized patient care...</p>
                 </div>
 
                 {/* Vision */}
-                <div className='flex flex-col items-center justify-center p-5 max-w-[400px] border border-4 border-primary'>
+                <div className='flex flex-col items-center justify-center p-5 max-w-[400px] border border-4 border-secondary'>
                     <img src={assets.vision} alt="Vision Icon" className='mb-4' />
                     <h3 className='text-2xl font-semibold mb-2'>Vision</h3>
-                    <p className='text-gray-400'>Our vision is to be a global leader in healthcare by continuously innovating and improving our services...</p>
+                    <p className='text-gray-500'>Our vision is to be a global leader in healthcare by continuously innovating and improving our services...</p>
                 </div>
 
                 {/* Values */}
-                <div className='flex flex-col items-center justify-center p-5 max-w-[400px] border border-4 border-primary'>
+                <div className='flex flex-col items-center justify-center p-5 max-w-[400px] border border-4 border-secondary'>
                     <img src={assets.value} alt="Values Icon" className='mb-4' />
                     <h3 className='text-2xl font-semibold mb-2'>Values</h3>
-                    <p className='text-gray-400'>We believe in integrity, empathy, excellence, and collaboration...</p>
+                    <p className='text-gray-500'>We believe in integrity, empathy, excellence, and collaboration...</p>
                 </div>
             </div>
 
             {/* Our Story */}
             <div className='mt-[150px] max-w-[800px]'>
                 <h1 className='text-3xl font-semibold'>Our <span className='text-primary'>Story</span></h1>
-                <p className='text-gray-400 mt-4'>Founded in 2009, MAX Multispeciality Hospital has grown from a small community clinic to one of the leading healthcare institutions in the region...</p>
+                <p className='text-gray-800 mt-4'>Founded in 2009, MAX Multispeciality Hospital has grown from a small community clinic to one of the leading healthcare institutions in the region...</p>
             </div>
 
             {/* Testimonials */}
@@ -113,12 +113,12 @@ const About = () => {
                 <div className='carousel mt-10 relative'>
 
                     {/* Carousel Item */}
-                    <div className='carousel-item text-center bg-primary p-8 rounded-lg bg-opacity-20 fade-transition'>
-                        <div className='bg-primary w-[100px] h-[100px] mb-4 m-auto rounded-full overflow-hidden'>
+                    <div className='carousel-item text-center bg-primary p-8 rounded-lg fade-transition'>
+                        <div className='bg-third w-[100px] h-[100px] mb-4 m-auto rounded-full overflow-hidden'>
                             <img src={testimonials[activeIndex].img} alt={`Patient ${activeIndex + 1}`} />
                         </div>
-                        <h3 className='text-xl font-semibold mb-2'>{testimonials[activeIndex].name}</h3>
-                        <p className='text-gray-300 mx-[50px] mb-4'>{`"${testimonials[activeIndex].text}"`}</p>
+                        <h3 className='text-xl font-semibold mb-2 text-white'>{testimonials[activeIndex].name}</h3>
+                        <p className='text-gray-800 mx-[50px] mb-4'>{`"${testimonials[activeIndex].text}"`}</p>
                         <div className='rating'>
                             {[...Array(testimonials[activeIndex].rating)].map((_, index) => (
                                 <span key={index} className='text-yellow-500'>⭐️</span>
@@ -135,7 +135,7 @@ const About = () => {
                         {testimonials.map((_, index) => (
                             <div
                                 key={index}
-                                className={`dot w-3 h-3 rounded-full mx-1 ${activeIndex === index ? 'bg-primary' : 'bg-gray-500'}`}
+                                className={`dot w-3 h-3 rounded-full mx-1 ${activeIndex === index ? 'bg-primary' : 'bg-gray-300'}`}
                                 onClick={() => setActiveIndex(index)}
                             />
                         ))}

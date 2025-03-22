@@ -69,7 +69,7 @@ const SkinCancerDetection = () => {
     };
 
     return (
-        <div className="mt-[50px] text-white flex flex-col w-full">
+        <div className="mt-[50px] text-gray-800 flex flex-col w-full mb-[150px]">
             <h1 className="text-4xl sm:text-6xl mb-[50px] font-semibold text-center"><span className="text-primary">Conquering</span> Skin Cancer Together
             </h1>
 
@@ -93,22 +93,22 @@ const SkinCancerDetection = () => {
 
                 {/* Detail Description */}
                 <h3 className="text-primary font-bold text-lg">A Message of Hope & Strength</h3>
-                <p className="text-sm text-gray-400 font-light">At the heart of every challenge lies the opportunity for triumph. Whether you are beginning your journey or have been battling skin cancer for some time, remember that early detection and proactive care are powerful tools. With cutting-edge technology and compassionate support, you are not alone on this journey.</p>
+                <p className="text-sm text-gray-500 font-light">At the heart of every challenge lies the opportunity for triumph. Whether you are beginning your journey or have been battling skin cancer for some time, remember that early detection and proactive care are powerful tools. With cutting-edge technology and compassionate support, you are not alone on this journey.</p>
 
                 <br />
 
                 <h3 className="text-primary font-bold text-lg">What Is Skin Cancer?</h3>
-                <p className="text-sm text-gray-400 font-light">Skin cancer affects millions, but knowledge is your first line of defense. By understanding the warning signs and risk factors, you empower yourself to take timely action. Our advanced detection tools are designed to provide you with the insights needed for early diagnosis and intervention.</p>
+                <p className="text-sm text-gray-500 font-light">Skin cancer affects millions, but knowledge is your first line of defense. By understanding the warning signs and risk factors, you empower yourself to take timely action. Our advanced detection tools are designed to provide you with the insights needed for early diagnosis and intervention.</p>
 
                 <br />
 
                 <h3 className="text-primary font-bold text-lg">Our Innovative Approach</h3>
-                <p className="text-sm text-gray-400 font-light">Imagine a future where technology meets compassion—a future where smart tools help in detecting early signs of skin cancer, giving you the opportunity to act before it’s too late. With our AI-driven detection system, you gain clarity, support, and the chance to address skin cancer at its earliest stages.</p>
+                <p className="text-sm text-gray-500 font-light">Imagine a future where technology meets compassion—a future where smart tools help in detecting early signs of skin cancer, giving you the opportunity to act before it’s too late. With our AI-driven detection system, you gain clarity, support, and the chance to address skin cancer at its earliest stages.</p>
 
                 <br />
 
                 <h3 className="text-primary font-bold text-lg">Steps to Beat Skin Cancer:</h3>
-                <ol className="text-sm text-gray-400 font-light list-decimal list-inside">
+                <ol className="text-sm text-gray-500 font-light list-decimal list-inside">
                     <li>Early Detection: Regular screenings can save lives. Our tool helps identify potential issues early, giving you a head start in treatment.</li>
                     <li>Informed Decisions: With accurate results and detailed insights, you can work closely with your healthcare provider to choose the best path forward.
                     </li>
@@ -121,14 +121,14 @@ const SkinCancerDetection = () => {
                 <br />
 
                 <h3 className="text-primary font-bold text-lg">You Are Stronger Than You Think</h3>
-                <p className="text-sm text-gray-400 font-light">Every step you take towards understanding and combating skin cancer is a step towards a healthier, brighter future. Embrace the spirit of resilience and know that every day brings new hope. With the right tools, information, and support, you can beat skin cancer and reclaim your life.
+                <p className="text-sm text-gray-500 font-light">Every step you take towards understanding and combating skin cancer is a step towards a healthier, brighter future. Embrace the spirit of resilience and know that every day brings new hope. With the right tools, information, and support, you can beat skin cancer and reclaim your life.
                 </p>
             </article>
 
 
 
-            <div className="bg-primary/20 rounded-lg mt-[100px] p-5 max-w-[400px] mx-auto">
-                <h3 className="text-center text-xl font-semibold">Check Here</h3>
+            <div className="bg-primary rounded-lg mt-[100px] p-5 max-w-[400px] mx-auto">
+                <h3 className="text-center text-xl font-semibold text-white">Check Here</h3>
 
                 <div className="md:flex gap-5 items-center w-full justify-center w-full mt-5">
                     {/* File Upload */}
@@ -136,7 +136,7 @@ const SkinCancerDetection = () => {
                         type="file"
                         accept=".jpg, .jpeg"
                         onChange={handleFileChange}
-                        className="p-1.5 rounded bg-primary/30 cursor-pointer w-full mb-2 md:mb-0 text-sm"
+                        className="p-1.5 rounded bg-third cursor-pointer w-full mb-2 md:mb-0 text-sm"
                     />
 
                     {/* Predict Button */}
@@ -154,7 +154,7 @@ const SkinCancerDetection = () => {
                 {/* Preview Uploaded Image */}
                 {showPreview && previewUrl && (
                     <div className="mt-5 w-full">
-                        <h3 className="text-md text-gray-400 mb-3">Result</h3>
+                        <h3 className="text-md text-gray-800 mb-3">Result</h3>
                         <img
                             src={previewUrl}
                             alt="Uploaded Preview"

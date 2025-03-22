@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='flex items-center justify-between text-sm py-2 mb-5 border-b border-b-gray-400 text-gray-200'>
+        <div className='flex items-center justify-between text-sm py-2 mb-5 border-b border-b-secondary text-gray-800'>
             <img onClick={() => navigate('/')} className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
             <ul className='hidden md:flex items-start gap-5 font-medium'>
                 <NavLink to='/'>
@@ -47,8 +47,8 @@ const Navbar = () => {
                     token && userData
                         ? <div className='flex items-center gap-2 cursor-pointer group relative'>
                             <img className='w-[55px] h-[55px] rounded-full bg-primary p-1' src={userData.image} alt="" />
-                            <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
-                                <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
+                            <div className='absolute top-0 right-0 p-12 z-20 hidden group-hover:block'>
+                                <div className='min-w-48 text-primary bg-white border-2 border-primary rounded flex flex-col gap-4 p-5'>
                                     <p onClick={() => navigate('/my-profile')} className='hover:text-black cursor-pointer'>My Profile</p>
                                     <p onClick={() => navigate('/my-appointments')} className='hover:text-black cursor-pointer'>My Appointments</p>
                                     <p onClick={logout} className='hover:text-black cursor-pointer'>Logout</p>
@@ -62,7 +62,7 @@ const Navbar = () => {
 
                 {/*--------Mobile Menu-----------*/}
 
-                <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden transition-all text-gray-300 backdrop-blur-md bg-opacity-80 bg-gray-900`}>
+                <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden transition-all text-gray-300 backdrop-blur-md bg-opacity-80 bg-gray-800`}>
                     <div className='flex items-center justify-between px-5 py-6'>
                         <img className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
                         <img className='w-[50px] cursor-pointer' onClick={() => setShowMenu(false)} src={assets.cross_icon} alt="" />

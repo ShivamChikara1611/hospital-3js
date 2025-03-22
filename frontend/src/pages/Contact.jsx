@@ -62,16 +62,16 @@ const Contact = () => {
 
 
     return (
-        <div className='mt-10 text-white flex flex-col items-center'>
-            <h1 className='text-4xl font-bold text-center text-gray-300'>Drop an <span className='text-primary'>Mail.</span></h1>
+        <div className='mt-10 flex flex-col items-center mb-[150px]'>
+            <h1 className='text-4xl font-bold text-center text-gray-800'>Drop an <span className='text-primary'>Mail.</span></h1>
 
             <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className='mt-12 flex flex-col gap-8 w-full max-w-[700px] bg-primary bg-opacity-10 p-5 md:p-8 lg:p-12 rounded-lg'
+                className='mt-12 flex flex-col gap-8 w-full max-w-[700px] bg-third/50 p-5 md:p-8 lg:p-12 rounded-lg'
             >
                 <label className='flex flex-col'>
-                    <span className='text-white font-medium mb-4'>Your Name</span>
+                    <span className='text-gray-800 font-medium mb-4'>Your Name</span>
                     <input
                         type='text'
                         required
@@ -79,11 +79,11 @@ const Contact = () => {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Enter your name."
-                        className='border-2 border-opacity-70 border-primary rounded w-full p-2 mt-1 bg-transparent'
+                        className='border-2 border-primary rounded w-full p-2 mt-1 bg-transparent'
                     />
                 </label>
                 <label className='flex flex-col'>
-                    <span className='text-white font-medium mb-4'>Your email</span>
+                    <span className='text-gray-800 font-medium mb-4'>Your email</span>
                     <input
                         type='email'
                         required
@@ -91,11 +91,11 @@ const Contact = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Enter your Mail-ID."
-                        className='border-2 border-opacity-70 border-primary rounded w-full p-2 mt-1 bg-transparent'
+                        className='border-2 border-primary rounded w-full p-2 mt-1 bg-transparent'
                     />
                 </label>
                 <label className='flex flex-col'>
-                    <span className='text-white font-medium mb-4'>Your Message</span>
+                    <span className='text-gray-800 font-medium mb-4'>Your Message</span>
                     <textarea
                         rows={7}
                         name='message'
@@ -103,7 +103,7 @@ const Contact = () => {
                         value={form.message}
                         onChange={handleChange}
                         placeholder='What you want to say?'
-                        className='border-2 border-opacity-70 border-primary rounded w-full p-2 mt-1 bg-transparent'
+                        className='border-2 border-primary rounded w-full p-2 mt-1 bg-transparent'
                     />
                 </label>
 

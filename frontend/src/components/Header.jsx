@@ -7,8 +7,8 @@ const Header = () => {
             <div className='absolute top-0 h-[88vh] z-[-1] flex justify-between w-full overflow-hidden'>
                 <DnaCanvas />
             </div>
-            <div className='flex flex-col gap-4'>
-                <p className='text-gray-200 text-5xl lg:text-7xl font-semibold leading-tight'>
+            <div className='flex flex-col gap-4 bg-third backdrop-blur-xs bg-opacity-50 h-full w-full justify-center sm:p-12 p-1'>
+                <p className='text-gray-800 text-5xl lg:text-7xl font-semibold leading-tight'>
                     <span className='text-primary font-bold'>Book</span> Appointment <br /> With Trusted Doctors.
                 </p>
                 <div className='bg-primary text-white w-fit mt-5 py-2 px-8 rounded-full text-lg'>

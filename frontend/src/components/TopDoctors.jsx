@@ -16,12 +16,12 @@ const TopDoctors = () => {
     }, [])
 
     return (
-        <div className='flex flex-col items-center gap-4 text-gray-300 md:mx-10'>
-            <div className='relative flex flex-col items-center justify-center h-[80vh] z-[-2] w-full'>
+        <div className='flex flex-col items-center gap-4 text-gray-800 md:mx-10'>
+            <div className='relative flex flex-col items-center justify-center h-[60vh] z-[-2] w-full border-b border-t border-primary'>
                 <h1 className='text-4xl sm:text-6xl mb-8 font-semibold text-center'>
                     Top <span className='text-primary'>Doctors</span> to Book
                 </h1>
-                <p className='text-gray-300 text-center text-md max-w-2xl'>
+                <p className='text-gray-800 text-center text-md max-w-2xl'>
                     Discover the top-rated doctors available for booking in various specialities. Our highly experienced professionals are dedicated to providing exceptional healthcare services tailored to your needs. Browse through the list of trusted doctors and book your appointment with ease, ensuring the best care for you and your loved ones.
                 </p>
                 <div className='absolute top-0 cursor-pointer h-full w-full z-[-1]'>
@@ -36,21 +36,21 @@ const TopDoctors = () => {
                             navigate(`/appointment/${item._id}`)
                             scrollTo(0, 0)
                         }}
-                        className='cursor-pointer opacity-60 hover:opacity-100 border-2 border-opacity-50 border-primary overflow-hidden rounded-xl hover:translate-y-[-10px] transition-all duration-300'
+                        className='cursor-pointer border-2 border-opacity-50 border-primary overflow-hidden rounded-xl hover:translate-y-[-10px] transition-all duration-300'
                         key={index}
                     >
-                        <img className='bg-primary bg-opacity-50' src={item.image} alt="" />
-                        <div className='p-4 bg-opacity-15 bg-primary h-full flex flex-col'>
+                        <img className='bg-secondary/50' src={item.image} alt="" />
+                        <div className='p-4 bg-third/50 h-full flex flex-col'>
                             <div className='flex items-center gap-2 text-sm text-center text-green-500'>
                                 <p className={`w-2 h-2 ${item.available ? 'bg-green-500' : 'bg-red-500'} rounded-full`}></p>
                                 <p className={`${item.available ? 'text-green-500' : 'text-red-500'}`}>{item.available ? 'Available' : 'Not Available'}</p>
                             </div>
-                            <p className='text-gray-300 text-lg font-medium'>
+                            <p className='text-gray-800 text-lg font-medium'>
                                 {item.name.split(' ').slice(0, 1).join(' ')} <span className='text-primary'>
                                     {item.name.split(' ').slice(1, 2).join(' ')}
                                 </span> {item.name.split(' ').slice(2, 3).join(' ')}
                             </p>
-                            <p className='text-gray-400 text-sm'>{item.speciality}</p>
+                            <p className='text-gray-500 text-sm'>{item.speciality}</p>
                         </div>
                     </div>
                 ))}

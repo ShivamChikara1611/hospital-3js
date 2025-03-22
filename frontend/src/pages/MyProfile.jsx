@@ -50,11 +50,10 @@ const MyProfile = () => {
     }
 
     return userData && (
-        <div className='max-w-[800px] mx-auto mt-10'>
-            <h1 className='text-4xl font-bold text-center text-gray-300'>My <span className='text-primary'>Profile</span></h1>
+        <div className='max-w-[800px] mx-auto mt-10 mb-[150px]'>
+            <h1 className='text-4xl font-bold text-center text-gray-800'>My <span className='text-primary'>Profile</span></h1>
 
-
-            <div className='text-gray-300 flex flex-col gap-2 text-md bg-primary bg-opacity-20 p-5 md:p-8 lg:p-10 rounded-lg mt-10'>
+            <div className='text-gray-300 flex flex-col gap-2 text-md bg-primary bg-opacity-20 p-5 md:p-8 lg:p-10 rounded-lg mt-10 text-gray-800'>
 
                 {
                     isEdit
@@ -79,8 +78,8 @@ const MyProfile = () => {
                 <hr className='h-[2px] border-none bg-primary my-5' />
 
                 <div>
-                    <p className='text-gray-400 underline mb-5 text-lg'>CONTACT INFORMATION</p>
-                    <div className='grid grid-cols-[1fr_3fr] gap-y-2.5 text-neutral-300'>
+                    <p className='text-gray-500 underline mb-5 text-lg'>CONTACT INFORMATION</p>
+                    <div className='grid grid-cols-[1fr_3fr] gap-y-2.5 text-gray-500'>
                         <p className='font-medium'>Email id:</p>
                         <p className='text-blue-500'>{userData.email}</p>
                         <p className='font-medium'>Phone:</p>
@@ -108,8 +107,8 @@ const MyProfile = () => {
                 </div>
 
                 <div>
-                    <p className='text-gray-400 underline mt-8 mb-5 text-lg'>BASIC INFORMATION</p>
-                    <div className='grid grid-cols-[1fr_3fr] gap-y-2.5 mt-3 text-neutral-300'>
+                    <p className='text-gray-500 underline mt-8 mb-5 text-lg'>BASIC INFORMATION</p>
+                    <div className='grid grid-cols-[1fr_3fr] gap-y-2.5 mt-3 text-gray-500'>
                         <p className='font-medium'>Gender:</p>
                         {
                             isEdit

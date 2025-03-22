@@ -5,9 +5,9 @@ const Banner = () => {
 
     return (
         <div className='w-full h-[70vh] flex flex-col justify-center'>
-            <div className='flex rounded-lg h-[50vh] bg-primary bg-opacity-15 justify-evenly pl-4'>
+            <div className='flex rounded-lg h-[50vh] bg-third justify-evenly pl-4'>
                 <div className='flex justify-center flex flex-col'>
-                    <div className='text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-white'>
+                    <div className='text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-gray-800'>
                         <p>Book Appointment</p>
                         <p className='mt-4'>With 100+ Trusted Doctors</p>
                     </div>
