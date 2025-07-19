@@ -1,18 +1,21 @@
 # Use official Python image
 FROM python:3.10-slim
 
-# Set working directory in container
+# Set environment variable for PORT (Railway will override it if available)
+ENV PORT=8000
+
+# Set working directory
 WORKDIR /app
 
-# Copy requirements and install dependencies
+# Copy dependencies and install
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy everything to the container
+# Copy all files
 COPY . .
 
-# Expose the port (optional, Railway sets it)
-EXPOSE 8000
+# Expose the port
+EXPOSE $PORT
 
-# Run gunicorn from inside the api/ folder
-CMD ["sh", "-c", "gunicorn --chdir api --bind 0.0.0.0:${PORT:-8000} app:app"]
+# Start the app using gunicorn from inside 'api'
+CMD ["gunicorn", "--chdir", "api", "--bind", "0.0.0.0:$PORT", "app:app"]
