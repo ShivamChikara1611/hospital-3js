@@ -1,21 +1,18 @@
-# Use official Python base image
-FROM python:3.9-slim
+# Use official Python image
+FROM python:3.10-slim
 
-# Set working directory to /app
+# Set working directory in container
 WORKDIR /app
 
-# Copy only requirements first to install dependencies early
+# Copy requirements and install dependencies
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
-
-# Copy the rest of the application code
+# Copy everything to the container
 COPY . .
 
-# Expose the port (Railway will use this automatically)
+# Expose the port (optional, Railway sets it)
 EXPOSE 8000
 
-# Start the application using Gunicorn
-# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-8000} app:app"]
+# Run gunicorn from inside the api/ folder
+CMD ["sh", "-c", "gunicorn --chdir api --bind 0.0.0.0:${PORT:-8000} app:app"]
