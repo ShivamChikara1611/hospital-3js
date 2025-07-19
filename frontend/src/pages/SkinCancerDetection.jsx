@@ -52,7 +52,7 @@ const SkinCancerDetection = () => {
         formData.append("file", file);
 
         try {
-            const response = await fetch("http://skincancerapi.shivamchikara.xyz/predict" || "https://skincancer-api.onrender.com/predict", {
+            const response = await fetch("http://127.0.0.1:5000", {
                 method: "POST",
                 body: formData,
             });
