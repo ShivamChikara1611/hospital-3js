@@ -1,20 +1,20 @@
 FROM python:3.10-slim
 
-# Set environment variable
+# Set environment variable for Railway
 ENV PORT=8000
 
-# Set working directory to /app
+# Set working directory
 WORKDIR /app
 
-# Copy requirements and install
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the whole project
+# Copy everything
 COPY . .
 
-# Expose the port (for Railway)
+# Expose port
 EXPOSE 8000
 
-# Start gunicorn server from within the /app directory
-CMD ["gunicorn", "--chdir", "api", "--bind", "0.0.0.0:8000", "app:app"]
+# Use shell form so $PORT is interpreted correctly
+CMD gunicorn --chdir api --bind 0.0.0.0:$PORT app:app
