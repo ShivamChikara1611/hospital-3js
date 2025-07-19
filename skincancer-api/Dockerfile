@@ -1,17 +1,20 @@
-# Use the official Python image
-FROM python:3.9
+# Use official Python base image
+FROM python:3.9-slim
 
-# Set working directory
+# Set working directory to /app
 WORKDIR /app
 
-# Copy only the necessary files from skincancer-api
-COPY . .
+# Copy only requirements first to install dependencies early
+COPY requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Expose the port Railway provides
-EXPOSE $PORT
+# Copy the rest of the application code
+COPY . .
 
-# Run your Flask app using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app:app"]
+# Expose the port (Railway will use this automatically)
+EXPOSE 8000
+
+# Start the application using Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
