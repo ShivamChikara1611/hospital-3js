@@ -30,7 +30,7 @@ export default function Chat() {
         setLoading(true);
 
         try {
-            const res = await axios.post(`${backendUrl}api/chat`, { text });
+            const res = await axios.post(`${backendUrl}/api/chat`, { text });
             const botReply = res.data.reply || "Sorry, I didn’t understand that.";
             setMessages((prev) => [...prev, { from: "bot", text: botReply }]);
         } catch (error) {
