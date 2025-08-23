@@ -9,6 +9,7 @@ const AppContextProvider = (props) => {
 
     const currencySymbol = '₹'
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const skinCancerUrl = import.meta.env.VITE_SKIN_CANCER_DETECTION_URL;
     
     const [doctors, setDoctors] = useState([]);
 
@@ -54,7 +55,7 @@ const AppContextProvider = (props) => {
     }
 
     const value = {
-        doctors, getDoctorsData, currencySymbol, token, setToken, backendUrl, userData, setUserData, loadUserProfileData
+        doctors, getDoctorsData, currencySymbol, token, setToken, backendUrl, skinCancerUrl, userData, setUserData, loadUserProfileData
     }
 
     useEffect(() => {

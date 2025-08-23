@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { assets } from "../assets/assets";
+import { AppContext } from "../context/AppContext";
+import axios from "axios";
+import { toast } from 'react-toastify';
 
 const images = [assets.skincancer1, assets.skincancer2, assets.skincancer3];
 
@@ -11,6 +14,8 @@ const SkinCancerDetection = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const { skinCancerUrl } = useContext(AppContext);
 
     // Auto slideshow effect
     useEffect(() => {
@@ -52,15 +57,12 @@ const SkinCancerDetection = () => {
         formData.append("file", file);
 
         try {
-            const response = await fetch(process.env.VITE_SKIN_CANCER_DETECTION_URL, {
-                method: "POST",
-                body: formData,
+            const response = await axios.post(skinCancerUrl, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
             });
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            const data = await response.json();
-            setPrediction(data);
+            setPrediction(response.data);
         } catch (err) {
             setError(err.message);
         } finally {
