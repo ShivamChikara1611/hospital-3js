@@ -29,7 +29,7 @@ const SkinCancerDetection = () => {
         const selectedFile = event.target.files[0];
         if (
             selectedFile &&
-            (selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg")
+            (selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "image/png")
         ) {
             setFile(selectedFile);
             setPreviewUrl(URL.createObjectURL(selectedFile));
