@@ -1,0 +1,14 @@
+# Ignore datasets
+data/
+notebooks/
+.ipynb_checkpoints/
+
+# Ignore models (we use HF Hub instead)
+model/
+*.h5
+*.pth
+
+# Ignore system files
+__pycache__/
+*.log
+*.DS_Store
