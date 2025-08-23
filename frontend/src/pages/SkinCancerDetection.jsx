@@ -52,7 +52,7 @@ const SkinCancerDetection = () => {
         formData.append("file", file);
 
         try {
-            const response = await fetch(process.env.SKIN_CANCER_DETECTION_URL, {
+            const response = await fetch(process.env.VITE_SKIN_CANCER_DETECTION_URL, {
                 method: "POST",
                 body: formData,
             });
