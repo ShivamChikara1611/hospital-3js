@@ -35,6 +35,7 @@ const SkinCancerDetection = () => {
             setPreviewUrl(URL.createObjectURL(selectedFile));
             setError(null);
             setShowPreview(false); // Reset preview when a new file is selected
+            setPrediction(null); // Clear previous prediction
         } else {
             setFile(null);
             setPreviewUrl(null);
