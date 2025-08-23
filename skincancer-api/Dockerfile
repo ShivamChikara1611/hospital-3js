@@ -1,23 +1,27 @@
 FROM python:3.10-slim
 
-# Set environment variable for Railway
+# Set environment variable
 ENV PORT=7860
 
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libgl1 libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
 COPY requirements.txt .
+
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy everything
+# Copy application code
 COPY . .
 
 # Expose port
 EXPOSE 7860
 
-# Use shell form so $PORT is interpreted correctly
-# CMD gunicorn --chdir api --bind 0.0.0.0:$PORT app:app
-
-# for hugging face
-CMD ["python", "app.py"] 
+# Run Flask app
+CMD ["python", "app.py"]
