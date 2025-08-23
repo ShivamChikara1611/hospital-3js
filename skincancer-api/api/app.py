@@ -9,13 +9,14 @@ from tensorflow.keras.preprocessing import image
 from PIL import Image
 import io
 import traceback
+from huggingface_hub import hf_hub_download
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('api.log'),
+        # logging.FileHandler('api.log'),
         logging.StreamHandler()
     ]
 )
@@ -32,18 +33,43 @@ IMG_HEIGHT = 224
 
 # MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'model', 'skin_cancer_model.h5')
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_PATH = os.path.join(BASE_DIR, 'model', 'skin_cancer_model.h5')
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# MODEL_PATH = os.path.join(BASE_DIR, 'model', 'skin_cancer_model.h5')
 
-CLASS_LABELS = ['Benign', 'Malignant']  # Ensure this matches your model's class order
 
-# Load the model at startup
+
+
+# Hugging Face model repo
+MODEL_REPO = "shivamchikara0006/skin-cancer-model"
+MODEL_FILENAME = "skin_cancer_model.h5"
+
+# Download model from HF Hub
 try:
-    model = load_model(MODEL_PATH)
-    logger.info(f"Model loaded successfully. Input shape: {model.input_shape}")
+    model_path = hf_hub_download(repo_id=MODEL_REPO, filename=MODEL_FILENAME)
+    model = load_model(model_path)
+    logger.info(f"Model loaded successfully from {MODEL_REPO}. Input shape: {model.input_shape}")
 except Exception as e:
     logger.error(f"Failed to load model: {str(e)}")
     raise
+
+
+
+CLASS_LABELS = ['Benign', 'Malignant']  # Ensure this matches your model's class order
+
+
+
+
+# Load the model at startup
+# try:
+#     model = load_model(MODEL_PATH)
+#     logger.info(f"Model loaded successfully. Input shape: {model.input_shape}")
+# except Exception as e:
+#     logger.error(f"Failed to load model: {str(e)}")
+#     raise
+
+
+
+
 
 def allowed_file(filename):
     """Check if the file extension is allowed"""
@@ -74,7 +100,7 @@ def get_prediction(image_array):
     """
     try:
         prediction = model.predict(image_array)
-        logger.debug(f"Raw prediction output: {prediction}")  # Add this for debugging
+        # logger.debug(f"Raw prediction output: {prediction}")  # Add this for debugging
         
         # Handle different model output types (sigmoid vs softmax)
         if prediction.shape[1] == 1:  # Binary classification (sigmoid)
@@ -147,5 +173,5 @@ def home():
     })
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 7860)) # 7860 for hugging face
     app.run(host='0.0.0.0', port=port, debug=False)
