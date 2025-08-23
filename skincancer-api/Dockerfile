@@ -1,27 +1,26 @@
-FROM python:3.10-slim
+# Use official Python image
+FROM python:3.9
 
-# Set environment variable
-ENV PORT=7860
+# Create a non-root user
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libgl1 libglib2.0-0 \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy requirements
-COPY requirements.txt .
+# Copy requirements with proper ownership
+COPY --chown=user ./requirements.txt requirements.txt
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy the rest of the application code
+COPY --chown=user . /app
 
-# Expose port
+# Expose the port expected by Hugging Face Spaces
 EXPOSE 7860
 
-# Run Flask app
-CMD ["python", "app.py"]
+# Run the FastAPI app with Uvicorn
+CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "7860"]
