@@ -4,15 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     font-family: Outfit;
 }
 
-body{
-    background-color: #ffffff;
+body {
+    position: relative;
+    z-index: 0;
+    /* create stacking context */
 }
 
-.active hr{
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(318deg,rgba(55, 27, 87, 1) 0%, rgba(25, 9, 61, 1) 47%, rgba(5, 30, 61, 1) 100%);
+    z-index: -20;
+    /* gradient layer */
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    z-index: -10;
+    /* blur layer (above gradient, below content) */
+}
+
+
+.active hr {
     @apply block;
 }
 
@@ -30,7 +51,7 @@ body{
 }
 
 @media (max-width:740px) {
-    .active p{
+    .active p {
         @apply text-gray-200 bg-primary
     }
 }

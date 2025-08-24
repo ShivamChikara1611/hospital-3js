@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='flex items-center justify-between text-sm py-2 mb-5 border-b border-b-secondary text-gray-800'>
+        <div className='flex items-center justify-between text-sm py-2 mb-5 border-b border-b-white/20 md:backdrop-blur-lg text-gray-200 mx-4 sm:mx-[10%] '>
             <img onClick={() => navigate('/')} className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
             <ul className='hidden md:flex items-start gap-5 font-medium'>
                 <NavLink to='/'>
@@ -48,22 +48,22 @@ const Navbar = () => {
                         ? <div className='flex items-center gap-2 cursor-pointer group relative'>
                             <img className='w-[55px] h-[55px] rounded-full bg-primary p-1' src={userData.image} alt="" />
                             <div className='absolute top-0 right-0 p-12 z-20 hidden group-hover:block'>
-                                <div className='min-w-48 text-primary bg-white border-2 border-primary rounded flex flex-col gap-4 p-5'>
-                                    <p onClick={() => navigate('/my-profile')} className='hover:text-black cursor-pointer'>My Profile</p>
-                                    <p onClick={() => navigate('/my-appointments')} className='hover:text-black cursor-pointer'>My Appointments</p>
-                                    <p onClick={logout} className='hover:text-black cursor-pointer'>Logout</p>
+                                <div className='min-w-48 text-gray-400 bg-white/5 backdrop-blur-md rounded-lg flex flex-col gap-4 p-5'>
+                                    <p onClick={() => navigate('/my-profile')} className='hover:text-gray-200 cursor-pointer'>My Profile</p>
+                                    <p onClick={() => navigate('/my-appointments')} className='hover:text-gray-200 cursor-pointer'>My Appointments</p>
+                                    <p onClick={logout} className='hover:text-gray-200 cursor-pointer'>Logout</p>
                                 </div>
                             </div>
                         </div>
-                        : <button onClick={() => navigate('/login')} className='bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block'>Create account</button>
+                        : <button onClick={() => navigate('/login')} className='bg-white/5 backdrop-blur-md text-gray-200 px-8 py-3 rounded-full hover:bg-primary/70 transition-all duration-300 font-light hidden md:block'>Create account</button>
                 }
 
                 <img onClick={() => setShowMenu(true)} className='w-[40px] md:hidden cursor-pointer' src={assets.menu_icon} alt="" />
 
                 {/*--------Mobile Menu-----------*/}
 
-                <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden transition-all text-gray-300 backdrop-blur-md bg-opacity-80 bg-gray-800`}>
-                    <div className='flex items-center justify-between px-5 py-6'>
+                <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 overflow-hidden transition-all text-gray-200 backdrop-blur-md bg-opacity-80 bg-black/30`}>
+                    <div className='flex items-center justify-between px-5 py-4'>
                         <img className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
                         <img className='w-[50px] cursor-pointer' onClick={() => setShowMenu(false)} src={assets.cross_icon} alt="" />
                     </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
                         {
                             token && userData
                                 ? ''
-                                : <button onClick={() => navigate('/login') & setShowMenu(false)} className='bg-primary text-white px-8 py-3 rounded-full font-light md:hidden absolute bottom-10'>Create account</button>
+                                : <button onClick={() => navigate('/login') & setShowMenu(false)} className='bg-white/20 backdrop-blur-md text-gray-200 hover:bg-primary/70 transition-all duration-300 px-8 py-3 rounded-full font-light md:hidden absolute bottom-10'>Create account</button>
                         }
                     </ul>
                 </div>

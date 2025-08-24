@@ -36,11 +36,13 @@ const App = () => {
 
   return (
     <div className='relative overflow-hidden'>
+      <div className='fixed z-[99] w-full'>
+          <Navbar />
+        </div>
 
       {/* actual pages */}
-      <div className='mx-4 sm:mx-[10%]'>
+      <div className='mx-4 sm:mx-[10%] mt-[100px]'>
         <ToastContainer />
-        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/doctors' element={<Doctors />} />
@@ -57,7 +59,7 @@ const App = () => {
       </div>
 
       {/* image of chat bot */}
-      <div className='fixed right-1.5 md:right-[2vw] bottom-2 md:bottom-7 z-[90] cursor-pointer border-primary border-4 p-1 bg-third rounded-full'>
+      <div className='fixed right-1.5 md:right-[2vw] bottom-2 md:bottom-7 z-[90] cursor-pointer p-1 bg-third/10 backdrop-blur-md rounded-full'>
         <img src={assets.maxBot} alt="chat" className='w-12' onClick={() => setChatToggle(!chatToggle)} />
       </div>
 
