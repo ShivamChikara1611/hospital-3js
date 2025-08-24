@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='flex items-center justify-between text-sm py-2 mb-5 border-b border-b-white/20 md:backdrop-blur-lg text-gray-200 mx-4 sm:mx-[10%] '>
+        <div className={`flex items-center justify-between text-sm py-2 mb-5 border-b border-b-white/20 ${showMenu ? 'md:backdrop-blur-lg' : 'backdrop-blur-lg'} text-gray-200 px-2 md:px-0 md:mx-[10%]`}>
             <img onClick={() => navigate('/')} className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
             <ul className='hidden md:flex items-start gap-5 font-medium'>
                 <NavLink to='/'>
@@ -62,7 +62,7 @@ const Navbar = () => {
 
                 {/*--------Mobile Menu-----------*/}
 
-                <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 overflow-hidden transition-all text-gray-200 backdrop-blur-md bg-opacity-80 bg-black/30`}>
+                <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 overflow-hidden transition-all text-gray-200 backdrop-blur-md bg-black/30`}>
                     <div className='flex items-center justify-between px-5 py-4'>
                         <img className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
                         <img className='w-[50px] cursor-pointer' onClick={() => setShowMenu(false)} src={assets.cross_icon} alt="" />

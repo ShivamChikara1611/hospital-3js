@@ -10,7 +10,7 @@ const DnaCanvas = (props) => {
     // Add automatic rotation using the useFrame hook
     useFrame(() => {
         if (groupRef.current) {
-            groupRef.current.rotation.y += 0.005;  // Rotation speed
+            groupRef.current.rotation.y += 0.008;  // Rotation speed
         }
     });
 
@@ -68,7 +68,7 @@ const Loader = () => {
 // Main Component with Canvas and Suspense
 const DnaApp = () => {
     return (
-        <div style={{ width: '100%', height: '100%', opacity: 0.7 }}>
+        <div style={{ width: '100%', height: '100%', opacity: 0.4 }}>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <Canvas shadows>
                     <directionalLight position={[0, 0, 10]} intensity={3} />
