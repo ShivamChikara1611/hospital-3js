@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
     return (
-        <div className={`flex items-center justify-between text-sm py-2 mb-5 border-b border-b-white/20 ${showMenu ? 'md:backdrop-blur-lg' : 'backdrop-blur-lg'} text-gray-200 px-2 md:px-0 md:mx-[10%]`}>
+        <div className={`flex items-center justify-between text-sm py-2 shadow-md ${showMenu ? 'md:backdrop-blur-lg' : 'backdrop-blur-lg'} text-gray-200 px-2 md:px-[10%]`}>
             <img onClick={() => navigate('/')} className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
             <ul className='hidden md:flex items-start gap-5 font-medium'>
                 <NavLink to='/'>
