@@ -41,7 +41,7 @@ const App = () => {
         </div>
 
       {/* actual pages */}
-      <div className='md:mx-[10%] mt-[100px]'>
+      <div className='md:mx-[10%]'>
         <ToastContainer />
         <Routes>
           <Route path='/' element={<Home />} />

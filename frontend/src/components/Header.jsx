@@ -3,7 +3,7 @@ import { DnaCanvas } from '../canvas'
 
 const Header = () => {
     return (
-        <div className='relative h-[82vh] flex flex-col justify-center'>
+        <div className='relative h-screen flex flex-col justify-center'>
             <div className='absolute top-0 h-full z-[-1] flex justify-between w-full overflow-hidden'>
                 <DnaCanvas />
             </div>

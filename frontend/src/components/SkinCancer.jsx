@@ -4,17 +4,17 @@ import { NavLink } from 'react-router-dom';
 
 const SkinCancer = () => {
     return (
-        <div className="relative flex flex-col items-center justify-center mt-[100px] h-[55vh] md:h-[70vh] md:rounded-xl overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center h-[55vh] md:h-[70vh] md:rounded-xl overflow-hidden">
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url(${assets.skincancer1})`
+                    backgroundImage: `url(${assets.skincancer3})`
                 }}
             ></div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center gap-5 md:gap-10 bg-black/65 backdrop-blur-md h-full w-full px-2">
+            <div className="relative z-10 flex flex-col justify-center gap-5 md:gap-10 bg-black/65 backdrop-blur-sm h-full w-full px-2">
                 <h1 className="text-4xl text-gray-200 tracking-wider sm:text-6xl font-semibold text-center">
                     Skin Cancer <span className="text-primary">Detector</span>
                 </h1>
