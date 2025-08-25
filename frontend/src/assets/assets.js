@@ -52,6 +52,7 @@ import skincancer1 from './skincancer1.png'
 import skincancer2 from './skincancer2.png'
 import skincancer3 from './skincancer3.png'
 import maxBot from './max_bot.png'
+import skinCancerBg from './skinCancerBg.jpg'
 
 
 
@@ -93,7 +94,8 @@ export const assets = {
     skincancer1,
     skincancer2,
     skincancer3,
-    maxBot
+    maxBot,
+    skinCancerBg
 }
 
 export const specialityData = [
