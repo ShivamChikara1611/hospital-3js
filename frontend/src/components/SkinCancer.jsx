@@ -14,7 +14,7 @@ const SkinCancer = () => {
             ></div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center gap-5 md:gap-10 bg-black/50 backdrop-blur-sm h-full w-full px-2">
+            <div className="relative z-10 flex flex-col justify-center gap-5 md:gap-10 bg-black/60 backdrop-blur-sm h-full w-full px-2">
                 <h1 className="text-4xl text-gray-200 tracking-wider sm:text-6xl font-semibold text-center">
                     Skin Cancer Detector
                 </h1>
