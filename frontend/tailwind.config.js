@@ -19,10 +19,19 @@ export default {
           '100%': {
             transform: 'rotate(-360deg)'
           }
+        },
+        'bounce-y': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-10px)'
+          }
         }
       },
       animation: {
-        'border-spin': 'border-spin 7s linear infinite'
+        'border-spin': 'border-spin 7s linear infinite',
+        'bounce-y': 'bounce-y 1.5s ease-in-out infinite'
       }
     },
   },

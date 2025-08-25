@@ -59,7 +59,7 @@ const App = () => {
       </div>
 
       {/* image of chat bot */}
-      <div className='fixed right-1.5 md:right-[2vw] bottom-2 md:bottom-7 z-[90] cursor-pointer p-1 bg-third/10 backdrop-blur-md rounded-full'>
+      <div className='fixed right-1.5 md:right-[2vw] bottom-2 md:bottom-7 z-[90] cursor-pointer animate-bounce-y hover:[animation-play-state:paused]'>
         <img src={assets.maxBot} alt="chat" className='w-12' onClick={() => setChatToggle(!chatToggle)} />
       </div>
 
