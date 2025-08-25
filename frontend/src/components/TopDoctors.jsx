@@ -41,11 +41,9 @@ const TopDoctors = () => {
                                 <p className={`w-2 h-2 ${item.available ? 'bg-green-700' : 'bg-red-600'} rounded-full`}></p>
                                 <p className={`${item.available ? 'text-green-700' : 'text-red-600'}`}>{item.available ? 'Available' : 'Not Available'}</p>
                             </div>
-                            <p className='text-gray-200 text-md md:text-lg font-medium'>
-                                {item.name.split(' ').slice(0, 1).join(' ')} <span className='text-primary'>
-                                    {item.name.split(' ').slice(1, 2).join(' ')}
-                                </span> {item.name.split(' ').slice(2, 3).join(' ')}
-                            </p>
+                            <p className='text-gray-200 text-md md:text-lg font-medium'>{item.name.trim().split(' ').slice(0, 1)} <span className='text-primary'>
+                                    {item.name.trim().split(' ').slice(1, 2)}
+                                </span></p>
                             <p className='text-gray-400 text-xs md:text-sm'>{item.speciality}</p>
                         </div>
                     </div>
