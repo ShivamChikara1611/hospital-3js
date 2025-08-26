@@ -25,19 +25,19 @@ const Navbar = () => {
             <img onClick={() => navigate('/')} className='w-[60px] rounded-full cursor-pointer' src={assets.logo} alt="" />
             <ul className='hidden md:flex items-start gap-5 font-medium'>
                 <NavLink to='/'>
-                    <li className='py-1'>HOME</li>
+                    <li className='py-1 tracking-widest'>HOME</li>
                     <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
                 </NavLink>
                 <NavLink to='/doctors'>
-                    <li className='py-1'>ALL DOCTORS</li>
+                    <li className='py-1 tracking-widest'>ALL DOCTORS</li>
                     <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
                 </NavLink>
                 <NavLink to='/about'>
-                    <li className='py-1'>ABOUT</li>
+                    <li className='py-1 tracking-widest'>ABOUT</li>
                     <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
                 </NavLink>
                 <NavLink to='/contact'>
-                    <li className='py-1'>CONTACT</li>
+                    <li className='py-1 tracking-widest'>CONTACT</li>
                     <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
                 </NavLink>
             </ul>
@@ -48,10 +48,10 @@ const Navbar = () => {
                         ? <div className='flex items-center gap-2 cursor-pointer group relative'>
                             <img className='w-[55px] h-[55px] rounded-full bg-primary p-1' src={userData.image} alt="" />
                             <div className='absolute top-0 right-0 p-12 z-20 hidden group-hover:block'>
-                                <div className='min-w-48 text-gray-400 bg-white/5 backdrop-blur-md rounded-lg flex flex-col gap-4 p-5'>
-                                    <p onClick={() => navigate('/my-profile')} className='hover:text-gray-200 cursor-pointer'>My Profile</p>
-                                    <p onClick={() => navigate('/my-appointments')} className='hover:text-gray-200 cursor-pointer'>My Appointments</p>
-                                    <p onClick={logout} className='hover:text-gray-200 cursor-pointer'>Logout</p>
+                                <div className='min-w-48 text-gray-500 font-light tracking-wider bg-gray-200 backdrop-blur-md rounded-lg flex flex-col gap-4 p-5'>
+                                    <p onClick={() => navigate('/my-profile')} className='hover:text-primary cursor-pointer'>My Profile</p>
+                                    <p onClick={() => navigate('/my-appointments')} className='hover:text-primary cursor-pointer'>My Appointments</p>
+                                    <p onClick={logout} className='hover:text-primary cursor-pointer'>Logout</p>
                                 </div>
                             </div>
                         </div>
