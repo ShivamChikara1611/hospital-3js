@@ -156,7 +156,7 @@ const MyAppointments = () => {
                                 </div>
                                 <div className='flex-1 text-gray-300'>
                                     <p className='text-gray-200 text-lg md:text-xl font-medium'>
-                                    {item.docData.name.trim().split(' ').slice(0, 1)} {item.docData.name.trim().split(' ').slice(1, 2)} {item.docData.name.trim().split(' ').slice(2, 3)}
+                                        {item.docData.name.trim().split(' ').slice(0, 1)} {item.docData.name.trim().split(' ').slice(1, 2)} {item.docData.name.trim().split(' ').slice(2, 3)}
                                     </p>
                                     <p className='text-xs'>{item.docData.speciality}</p>
                                     <p className='text-xs'><span className='text-gray-400'>Date & Time:</span> {slotDateFormat(item.slotDate)} | {item.slotTime}</p>
@@ -185,13 +185,13 @@ const MyAppointments = () => {
             </div>
 
             {/* more button */}
-            <div className='flex justify-center w-full mt-6 mb-16'>
-                {doctorsToShow && (
+            {appointments.length > doctorsToShow &&
+                <div className='flex justify-center w-full mt-6 mb-16'>
                     <button onClick={loadMoreDoctors} className='bg-white/5 backdrop-blur-md text-gray-200 px-8 py-2 rounded-full hover:bg-primary/70 transition-all duration-300 font-light tracking-wider'>
                         More
                     </button>
-                )}
-            </div>
+                </div>
+            }
         </div>
     )
 }
