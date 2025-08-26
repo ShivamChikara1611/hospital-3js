@@ -152,7 +152,7 @@ const MyAppointments = () => {
                             {/* image and details */}
                             <div className='grid grid-cols-[1fr_3fr] gap-2' key={index}>
                                 <div>
-                                    <img className='w-32 bg-white/30' src={item.docData.image} alt="" />
+                                    <img className='w-32' src={item.docData.image} alt="" />
                                 </div>
                                 <div className='flex-1 text-gray-300'>
                                     <p className='text-gray-200 text-lg md:text-xl font-medium'>
