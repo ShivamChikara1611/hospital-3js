@@ -29,7 +29,7 @@ const Doctors = () => {
     }
 
     return (
-        <div className='my-10 md:my-16 mx-2'>
+        <div className='my-10 md:my-16 mx-2 md:mx-0'>
             <h1 className='text-gray-200 text-center tracking-wider text-2xl md:text-4xl mb-8 md:mb-12'>Browse through the <span className='text-primary'>Doctors Specialist.</span></h1>
             <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
 
