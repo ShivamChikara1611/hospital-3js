@@ -62,16 +62,16 @@ const Contact = () => {
 
 
     return (
-        <div className='mt-10 flex flex-col items-center mb-[150px]'>
-            <h1 className='text-4xl font-bold text-center text-gray-800'>Drop an <span className='text-primary'>Mail.</span></h1>
+        <div className='my-10 flex flex-col items-center mx-2 md:mx-0'>
+            <h1 className='text-2xl text-center tracking-wider text-gray-200'>Drop an Email</h1>
 
             <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className='mt-12 flex flex-col gap-8 w-full max-w-[700px] bg-third/50 p-5 md:p-8 lg:p-12 rounded-lg'
+                className='mt-8 max-w-[450px] flex flex-col gap-4 w-full bg-white/10 px-3 py-5 md:px-5 md:py-7 rounded-lg'
             >
                 <label className='flex flex-col'>
-                    <span className='text-gray-800 font-medium mb-4'>Your Name</span>
+                    <span className='text-gray-300 font-medium text-md'>Your Name</span>
                     <input
                         type='text'
                         required
@@ -79,11 +79,11 @@ const Contact = () => {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Enter your name."
-                        className='border-2 border-primary rounded w-full p-2 mt-1 bg-transparent'
+                        className='rounded w-full py-3 px-2 text-sm mt-1 bg-white/15 placeholder:text-gray-400 tracking-wide text-gray-300'
                     />
                 </label>
                 <label className='flex flex-col'>
-                    <span className='text-gray-800 font-medium mb-4'>Your email</span>
+                    <span className='text-gray-300 font-medium text-md'>Your email</span>
                     <input
                         type='email'
                         required
@@ -91,11 +91,11 @@ const Contact = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Enter your Mail-ID."
-                        className='border-2 border-primary rounded w-full p-2 mt-1 bg-transparent'
+                        className='rounded w-full py-3 px-2 text-sm mt-1 bg-white/15 placeholder:text-gray-400 tracking-wide text-gray-300'
                     />
                 </label>
                 <label className='flex flex-col'>
-                    <span className='text-gray-800 font-medium mb-4'>Your Message</span>
+                    <span className='text-gray-300 font-medium text-md'>Your Message</span>
                     <textarea
                         rows={7}
                         name='message'
@@ -103,14 +103,14 @@ const Contact = () => {
                         value={form.message}
                         onChange={handleChange}
                         placeholder='What you want to say?'
-                        className='border-2 border-primary rounded w-full p-2 mt-1 bg-transparent'
+                        className='rounded w-full py-3 px-2 text-sm mt-1 bg-white/15 placeholder:text-gray-400 tracking-wide text-gray-300'
                     />
                 </label>
 
                 <div className="mx-auto">
                 <button
                     type='submit'
-                    className='text-white border-2 border-primary text-md mt-4 bg-primary rounded-md py-2 hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary hover:scale-105 transition-all duration-300 px-10'
+                    className='bg-white/5 backdrop-blur-md text-gray-200 px-8 py-2 rounded-full hover:bg-primary/70 transition-all duration-300 font-light tracking-wider'
                 >
                     {loading ? "Sending..." : "Send"}
                 </button>
