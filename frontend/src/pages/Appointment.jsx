@@ -161,10 +161,10 @@ const Appointment = () => {
                 <div className='mt-[60px] lg:mt-0'>
                     <p className='text-xl font-thin tracking-wide text-gray-200 text-center lg:hidden'> Booking Slots</p>
 
-                    <div className='flex gap-2 justify-start overflow-x-scroll mt-6 lg:mt-0 w-fit mx-auto'>
+                    <div className='flex gap-2 w-full max-w-[470px] mx-auto justify-start overflow-x-auto mt-6 lg:mt-0'>
                         {
                             docSlots.length && docSlots.map((item, index) => (
-                                <div onClick={() => setSlotIndex(index)} className={`text-center py-3 w-[60px] min-w-[60px] rounded-b-xl tracking-wider rounded-t-none cursor-pointer ${slotIndex === index ? 'bg-gray-200 text-primary' : 'bg-white/10 text-gray-400 hover:bg-white/20 transition-all duration-200'}`} key={index}>
+                                <div onClick={() => setSlotIndex(index)} className={`text-center py-3 w-[60px] shrink-0 rounded-b-xl tracking-wider rounded-t-none cursor-pointer ${slotIndex === index ? 'bg-gray-200 text-primary' : 'bg-white/10 text-gray-400 hover:bg-white/20 transition-all duration-200'}`} key={index}>
                                     <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
                                     <p className='text-sm'>{item[0] && item[0].datetime.getDate()}</p>
                                 </div>
