@@ -7,7 +7,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
 
-    const currencySymbol = '₹'
+    const currencySymbol = '¥';
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const skinCancerUrl = import.meta.env.VITE_SKIN_CANCER_DETECTION_URL;
     
