@@ -22,24 +22,26 @@ export const chatWithGemini = async (message) => {
             model: "gemini-2.5-flash",
             contents: [
                 {
-                    role: "system",
+                    role: "user",
                     parts: [
                         {
                             text:
-                                "You are a helpful hospital AI assistant. Reply clearly and professionally within 50 words. " +
-                                "Avoid long explanations, repetition, or disclaimers. Be factual and precise. If user input is unclear, ask for clarification. if user asks for medical advice, give him the medication name for the instant relief and cure but always recommend consulting a healthcare professional",
+                                `You are a helpful hospital AI assistant. Reply clearly and professionally within 50 words. ` +
+                                `Avoid long explanations, repetition, or disclaimers. Be factual and precise. ` +
+                                `If the user input is unclear, ask for clarification. ` +
+                                `If the user asks for medical advice, give the general medication name for instant relief ` +
+                                `and recommend consulting a healthcare professional.\n\nUser: ${message}`,
                         },
                     ],
                 },
-                { role: "user", parts: [{ text: message }] },
             ],
 
             // Response control configuration
             generationConfig: {
-                temperature: 0.4,     // Balanced factual tone
+                temperature: 0.4, // Balanced factual tone
                 topP: 0.9,
                 topK: 40,
-                maxOutputTokens: 80,  // ~50 words
+                maxOutputTokens: 80, // ~50 words
             },
         });
 
